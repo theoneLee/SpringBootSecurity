@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/signin.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <li><a th:href="@{/}"/>首页</li>
+    </ul>
+
+</div>
+<div class="container">
+    <p th:if="${param.logout}" class="bg-warning">已注销</p>
+    <p th:if="${param.error}" class="bg-danger">有错误，请重试。</p>
+    <form class="form-signin" role="form" th:action="@{/login}" action="/login" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" name="username" class="form-control" placeholder="UserName"/>
+        <input type="password" name="password" class="form-control" placeholder="Password"/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+</div> <!-- /container -->
+
+</body>
+</html>
